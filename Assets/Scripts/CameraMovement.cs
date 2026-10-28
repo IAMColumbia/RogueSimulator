@@ -23,11 +23,9 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(player.transform.position.y - verticalBoundingBuffer);
         //North
         if(player.transform.position.y - verticalBoundingBuffer > Camera.main.transform.position.y)
         {
-            Debug.Log("Could Travel North");
             Camera.main.transform.Translate(0, verticalScreenJump, 0);
         }
         
