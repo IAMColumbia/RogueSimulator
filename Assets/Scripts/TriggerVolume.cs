@@ -11,7 +11,7 @@ public class TriggerVolume : MonoBehaviour
     [SerializeField] private bool canBeTriggeredMultipleTimes = false;
     public bool isPlayerThere = false;
 
-    private bool triggered;
+    [SerializeField] private bool triggered;
 
     // called in edit mode when this component is first added to a gameobject.
     private void Reset()
