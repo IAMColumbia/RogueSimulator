@@ -60,14 +60,13 @@ public class RayTrigger : MonoBehaviour
         {
             Collider2D collider = hit.collider;
 
-            // Ignore colliders attached to this object or its children.
+            // ignore colliders attached to this object or its children.
             if (collider.transform == transform ||
                 collider.transform.IsChildOf(transform))
             {
                 continue;
             }
 
-            // Only detect players and enemies.
             if (collider.CompareTag("Player") ||
                 collider.CompareTag("Enemy"))
             {

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,7 +12,7 @@ public class TriggerVolume : MonoBehaviour
     public bool isPlayerThere = false;
 
     private bool triggered;
-    
+
     // called in edit mode when this component is first added to a gameobject.
     private void Reset()
     {
@@ -27,7 +26,7 @@ public class TriggerVolume : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player") && !other.CompareTag("Enemy")) return;
         if (triggered && !canBeTriggeredMultipleTimes) return;
 
         triggered = true;
@@ -36,11 +35,11 @@ public class TriggerVolume : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) isPlayerThere = true;
+        if (other.CompareTag("Player") || other.CompareTag("Enemy")) isPlayerThere = true;
     }
 
-    private void OnTriggerExit2D (Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) isPlayerThere = false;
+        if (other.CompareTag("Player") || other.CompareTag("Enemy")) isPlayerThere = false;
     }
 }

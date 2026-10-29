@@ -1,59 +1,82 @@
+
 using UnityEngine;
 
 public class SpikeHandler : MonoBehaviour
 {
-    TriggerVolume volume;
-    PlayerHealth health;
-    bool isSpikeActive = false;
+    private TriggerVolume volume;
+    private PlayerHealth health;
+    private TimerTrigger activateTimer;
+    private TimerTrigger deactivateTimer;
+
+    public bool isSpikeActive = false;
+
     [SerializeField] private Animator animator;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Tooltip("How long the spikes remain dangerous.")]
+    [SerializeField] private float activeDuration = 0.5f;
+
+    private void Awake()
     {
         volume = GetComponent<TriggerVolume>();
         health = FindFirstObjectByType<PlayerHealth>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (isSpikeActive == true) isSpikeActive = false;
+        TimerTrigger[] timers = GetComponents<TimerTrigger>();
+
+        if (timers.Length >= 2)
+        {
+            activateTimer = timers[0];
+            deactivateTimer = timers[1];
+        }
+        else
+        {
+            Debug.LogError(
+                "SpikeHandler requires two TimerTrigger components.",
+                this
+            );
+        }
     }
 
     public void SpikeTriggered()
     {
+        if (isSpikeActive) return;
+
         isSpikeActive = true;
         animator.SetTrigger("Activated");
 
-        if (volume.isPlayerThere == true)
+        if (volume != null && volume.isPlayerThere)
         {
             if (health == null)
-            {
-                Debug.LogError("No PlayerHealth component found.");
-                return;
-            }
+                health = FindFirstObjectByType<PlayerHealth>();
 
-            health.PlayerHit();
+            if (health != null)
+                health.PlayerHit();
+            else
+                Debug.LogError("No PlayerHealth component found.");
         }
-        else
+
+        if (deactivateTimer != null)
         {
-            Debug.Log("No player to hit");
+            deactivateTimer.StopTimer();
+            deactivateTimer.StartTimer();
         }
+    }
+
+    public void DeactivateSpikes()
+    {
+        isSpikeActive = false;
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("Something has entered the SpikeHandler's Collider");
+        if (!isSpikeActive) return;
+
         if (other.CompareTag("Enemy"))
         {
-            if (isSpikeActive == true)
-            {
-                GameObject enemy = other.attachedRigidbody != null
+            GameObject enemy = other.attachedRigidbody != null
                 ? other.attachedRigidbody.gameObject
                 : other.gameObject;
-                Destroy(enemy);
-            }
 
+            Destroy(enemy);
         }
     }
 }

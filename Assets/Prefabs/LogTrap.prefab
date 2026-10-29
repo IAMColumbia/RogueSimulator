@@ -187,8 +187,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4694858274286512721}
-        m_TargetAssemblyTypeName: SpikeHandler, Assembly-CSharp
-        m_MethodName: SpikeTriggered
+        m_TargetAssemblyTypeName: LogHandler, Assembly-CSharp
+        m_MethodName: LogTriggered
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
