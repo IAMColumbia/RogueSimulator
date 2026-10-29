@@ -14,11 +14,14 @@ public class SpikeHandler : MonoBehaviour
 
     [Tooltip("How long the spikes remain dangerous.")]
     [SerializeField] private float activeDuration = 0.5f;
+    private LootManager lootManager;
+
 
     private void Awake()
     {
         volume = GetComponent<TriggerVolume>();
         health = FindFirstObjectByType<PlayerHealth>();
+        lootManager = FindFirstObjectByType<LootManager>();
 
         TimerTrigger[] timers = GetComponents<TimerTrigger>();
 
@@ -75,7 +78,7 @@ public class SpikeHandler : MonoBehaviour
             GameObject enemy = other.attachedRigidbody != null
                 ? other.attachedRigidbody.gameObject
                 : other.gameObject;
-
+            lootManager.SpawnLootOnDeath(enemy);
             Destroy(enemy);
         }
     }
