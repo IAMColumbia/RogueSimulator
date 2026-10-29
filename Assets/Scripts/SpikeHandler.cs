@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpikeHandler : MonoBehaviour
@@ -6,6 +5,7 @@ public class SpikeHandler : MonoBehaviour
     TriggerVolume volume;
     PlayerHealth health;
     bool isSpikeActive = false;
+    [SerializeField] private Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,15 +17,15 @@ public class SpikeHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isSpikeActive == true) isSpikeActive = false;
+        if (isSpikeActive == true) isSpikeActive = false;
     }
 
     public void SpikeTriggered()
     {
         isSpikeActive = true;
+        animator.SetTrigger("Activated");
 
-
-        if(volume.isPlayerThere == true)
+        if (volume.isPlayerThere == true)
         {
             if (health == null)
             {
@@ -46,12 +46,12 @@ public class SpikeHandler : MonoBehaviour
         Debug.Log("Something has entered the SpikeHandler's Collider");
         if (other.CompareTag("Enemy"))
         {
-            if(isSpikeActive == true)
+            if (isSpikeActive == true)
             {
                 GameObject enemy = other.attachedRigidbody != null
                 ? other.attachedRigidbody.gameObject
                 : other.gameObject;
-            Destroy(enemy);
+                Destroy(enemy);
             }
 
         }
