@@ -222,8 +222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
-  stepInterval: 0.13
-  footstepSound: {fileID: 8300000, guid: 1baf29f334ff614429de33f5c1b82a12, type: 3}
+  stepInterval: 0.3
+  footstepSound: {fileID: 8300000, guid: f0dc41c7a6f13cc40a0b8b060d8547ee, type: 3}
 --- !u!50 &20619504
 Rigidbody2D:
   serializedVersion: 5
