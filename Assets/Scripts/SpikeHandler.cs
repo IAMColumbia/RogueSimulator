@@ -12,7 +12,6 @@ public class SpikeHandler : MonoBehaviour
     public bool isSpikeActive = false;
 
     [SerializeField] private Animator animator;
-
     private LootManager lootManager;
 
     private void Awake()

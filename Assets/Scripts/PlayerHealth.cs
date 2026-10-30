@@ -1,29 +1,39 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int hp;
-    bool isDead = false;
+    private bool isDead = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Animator animator;
+
+    private PlayerMovement playerController;
+
+    private void Awake()
     {
-
+        playerController = GetComponent<PlayerMovement>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (hp <= 0 && isDead == false && gameObject.CompareTag("Player"))
+        if (hp <= 0 && !isDead && gameObject.CompareTag("Player"))
         {
-            Debug.Log("Do Game Over Stuff Here");
+            playerController.moveSpeed = 0f;
+            playerController.enabled = false;
+
+            animator.SetBool("IsDead", true);
             isDead = true;
         }
     }
 
+    public void PlayerDeath()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
+
     public void PlayerHit()
     {
-        //Will need to call animation stuff here
         hp--;
     }
 }

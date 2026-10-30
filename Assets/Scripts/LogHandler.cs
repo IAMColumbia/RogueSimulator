@@ -1,62 +1,94 @@
+
 using UnityEngine;
 
 public class LogHandler : MonoBehaviour
 {
-    TriggerVolume volume;
-    PlayerHealth health;
-    bool isLogActive = false;
-    [SerializeField] private Animator animator;
+    private TriggerVolume volume;
+    private PlayerHealth health;
+    private TimerTrigger deactivateTimer;
     private LootManager lootManager;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public bool isLogActive = false;
+
+    [SerializeField] private Animator animator;
+
+    private void Awake()
     {
         volume = GetComponent<TriggerVolume>();
-        lootManager = GetComponent<LootManager>();
         health = FindFirstObjectByType<PlayerHealth>();
-    }
+        lootManager = FindFirstObjectByType<LootManager>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (isLogActive == true) isLogActive = false;
+        deactivateTimer = GetComponent<TimerTrigger>();
+
+        if (deactivateTimer == null)
+        {
+            Debug.LogError(
+                "LogHandler requires a TimerTrigger component.",
+                this
+            );
+        }
     }
 
     public void LogTriggered()
     {
+        if (isLogActive) return;
+
+        Debug.Log("LogTriggered called!");
+
         isLogActive = true;
         animator.SetTrigger("Activated");
 
-        if (volume.isPlayerThere == true)
+        // Damage the player if they are inside the trigger volume.
+        if (volume != null && volume.isPlayerThere)
         {
             if (health == null)
-            {
-                Debug.LogError("No PlayerHealth component found.");
-                return;
-            }
+                health = FindFirstObjectByType<PlayerHealth>();
 
-            health.PlayerHit();
+            if (health != null)
+                health.PlayerHit();
+            else
+                Debug.LogError("No PlayerHealth component found.");
+        }
+
+        StartDeactivationTimer();
+    }
+
+    private void StartDeactivationTimer()
+    {
+        Debug.Log("Starting log deactivation timer.");
+
+        if (deactivateTimer != null)
+        {
+            deactivateTimer.StopTimer();
+            deactivateTimer.StartTimer();
         }
         else
         {
-            Debug.Log("No player to hit");
+            Debug.LogError("Deactivate TimerTrigger is not assigned.");
         }
+    }
+
+    public void DeactivateLog()
+    {
+        Debug.Log("Log deactivated.");
+        isLogActive = false;
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("Something has entered the LogHandler's Collider");
+        if (!isLogActive) return;
+
         if (other.CompareTag("Enemy"))
         {
-            if (isLogActive == true)
+            Debug.Log("Enemy inside active log collider.");
+
+            EnemyMovement enemyMovement =
+                other.GetComponentInParent<EnemyMovement>();
+
+            if (enemyMovement != null)
             {
-                GameObject enemy = other.attachedRigidbody != null
-                ? other.attachedRigidbody.gameObject
-                : other.gameObject;
-                EnemyMovement enemyMovement = enemy.GetComponent<EnemyMovement>();
                 enemyMovement.KillYourself(lootManager);
             }
-
         }
     }
 }
