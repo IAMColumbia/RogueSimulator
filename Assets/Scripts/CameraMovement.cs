@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    private float verticalScreenJump = 10;
-    private float horizontalScreenJump = 18;
+    private float verticalScreenJump = 13;
+    private float horizontalScreenJump = 21;
     private float verticalBoundingBuffer;
     private float horizontalBoundingBuffer;
 
