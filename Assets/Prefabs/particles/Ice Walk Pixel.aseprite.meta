@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2ab3b744c42808748a20b1afcd72ec5f
+guid: 148097646912dba49a9b611512dfb530
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639287862016509292
+  platformSettingsDirtyTick: 639288935516837302
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -127,7 +127,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Flame Particle
+  - name: Ice Walk Pixel
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 8
       height: 8
-    spriteID: 4fc48733963ca91428e256a0ce203adb
+    spriteID: 1bb4e5fb0c29c6d46b6dadb3f6b6bca4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,17 +153,17 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 3047976563
+      value0: 4246574342
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: Flame Particle
+    name: Ice Walk Pixel
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Flame Particle
+    - name: Ice Walk Pixel
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 0
         width: 8
         height: 8
-      spriteId: 4fc48733963ca91428e256a0ce203adb
+      spriteId: 1bb4e5fb0c29c6d46b6dadb3f6b6bca4
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

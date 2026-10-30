@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0c32a5dc7f4a9be46865a1a77be4c1be
+guid: 7fdaa360c8d22664ab092b0afa22214a
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639287862016509292
+  platformSettingsDirtyTick: 639288935331628400
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -127,7 +127,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Tile Walk Pixel
+  - name: Green Walk Pixel
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 8
       height: 8
-    spriteID: 9b758d684a8b0aa4f92deb18debdafbc
+    spriteID: 15e296ab7aca5434ead910754707d611
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,17 +153,17 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 3593644905
+      value0: 721426730
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: Tile Walk Pixel
+    name: Green Walk Pixel
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Tile Walk Pixel
+    - name: Green Walk Pixel
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 0
         width: 8
         height: 8
-      spriteId: 9b758d684a8b0aa4f92deb18debdafbc
+      spriteId: 15e296ab7aca5434ead910754707d611
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
