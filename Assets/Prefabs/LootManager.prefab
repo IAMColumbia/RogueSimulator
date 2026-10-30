@@ -44,4 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47f31b8620caa34cb73daa6b3685743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  lootDrop: {fileID: 8500655514663621589, guid: 5c3dae89b64cebd4f92fc14081066068, type: 3}
+  lootDrop:
+  - {fileID: 739735471690709809, guid: ebad12080d760e747892988da4990a01, type: 3}
+  - {fileID: 1836204433880947700, guid: d7224b1ba119acd4bb86e67e6af96cd8, type: 3}
+  - {fileID: 4197052258120757622, guid: f5ac416a3f20325448d354cc917f8a25, type: 3}
+  - {fileID: 5667855375401482947, guid: 3f0bdcb4a2b0b764fbf2511fbb98ded6, type: 3}
+  - {fileID: 3134134615235659813, guid: a384a53c271fbdc4e9979bc3e9783eed, type: 3}

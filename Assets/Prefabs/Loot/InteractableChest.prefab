@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2287765256732486568}
   - component: {fileID: 8602622938712662521}
-  - component: {fileID: 1149894022555569336}
   - component: {fileID: 394666145388432443}
   - component: {fileID: 1037814389308678920}
+  - component: {fileID: 258068653821359010}
   m_Layer: 0
   m_Name: InteractableChest
-  m_TagString: Untagged
+  m_TagString: Loot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,19 +94,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &1149894022555569336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8500655514663621589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec74655bc4cc47a45bbf5d725c43c762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpikeHandler
-  animator: {fileID: 0}
 --- !u!61 &394666145388432443
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -192,6 +179,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  enemyEnteredTriggerVolume:
+    m_PersistentCalls:
+      m_Calls: []
   canBeTriggeredMultipleTimes: 1
   isPlayerThere: 0
   triggered: 0
+--- !u!114 &258068653821359010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8500655514663621589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee9ac00212cf2647bc8084257a719d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LootHandler
+  value: 3

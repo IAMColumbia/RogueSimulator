@@ -82,8 +82,8 @@ public class SpikeHandler : MonoBehaviour
             GameObject enemy = other.attachedRigidbody != null
                 ? other.attachedRigidbody.gameObject
                 : other.gameObject;
-            lootManager.SpawnLootOnDeath(enemy);
-            Destroy(enemy);
+            EnemyMovement enemyMovement = enemy.GetComponent<EnemyMovement>();
+            enemyMovement.KillYourself(lootManager);
         }
     }
 }

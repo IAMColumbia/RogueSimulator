@@ -5,6 +5,7 @@ public class BoulderHandler : MonoBehaviour
     RayTrigger rayTrigger;
     PlayerHealth health;
     bool isBoulderActive = false;
+    private LootManager lootManager;
     //bool PlayerIsThere = false;
     //bool EnemyIsThere = false;
 
@@ -13,6 +14,7 @@ public class BoulderHandler : MonoBehaviour
     {
         rayTrigger = GetComponent<RayTrigger>();
         health = FindFirstObjectByType<PlayerHealth>();
+        lootManager = GetComponent<LootManager>();
     }
 
     // Update is called once per frame
@@ -33,6 +35,10 @@ public class BoulderHandler : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
 
+        if (other.CompareTag("Loot"))
+        {
+            return;
+        }
         if (other.CompareTag("Enemy"))
         {
             Debug.Log("Enemy has entered the Boulder's Collider");
@@ -41,7 +47,8 @@ public class BoulderHandler : MonoBehaviour
                 GameObject enemy = other.attachedRigidbody != null
                 ? other.attachedRigidbody.gameObject
                 : other.gameObject;
-                Destroy(enemy);
+                EnemyMovement enemyMovement = enemy.GetComponent<EnemyMovement>();
+                enemyMovement.KillYourself(lootManager);
             }
 
         }

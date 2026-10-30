@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class TriggerVolume : MonoBehaviour
 {
     [SerializeField] private UnityEvent playerEnteredTriggerVolume;
+    [SerializeField] private UnityEvent enemyEnteredTriggerVolume;
     [SerializeField] private bool canBeTriggeredMultipleTimes = false;
     public bool isPlayerThere = false;
 
@@ -28,9 +29,19 @@ public class TriggerVolume : MonoBehaviour
     {
         if (!other.CompareTag("Player") && !other.CompareTag("Enemy")) return;
         if (triggered && !canBeTriggeredMultipleTimes) return;
-
+        if (other.CompareTag("Player")) PlayerEntered();
+        if (other.CompareTag("Enemy")) EnemyEntered();
         triggered = true;
+
+    }
+
+    private void PlayerEntered()
+    {
         playerEnteredTriggerVolume?.Invoke();
+    }
+    private void EnemyEntered()
+    {
+        enemyEnteredTriggerVolume?.Invoke();
     }
 
     private void OnTriggerStay2D(Collider2D other)
