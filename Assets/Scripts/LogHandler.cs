@@ -6,11 +6,13 @@ public class LogHandler : MonoBehaviour
     PlayerHealth health;
     bool isLogActive = false;
     [SerializeField] private Animator animator;
+    private LootManager lootManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         volume = GetComponent<TriggerVolume>();
+        lootManager = GetComponent<LootManager>();
         health = FindFirstObjectByType<PlayerHealth>();
     }
 
@@ -51,7 +53,8 @@ public class LogHandler : MonoBehaviour
                 GameObject enemy = other.attachedRigidbody != null
                 ? other.attachedRigidbody.gameObject
                 : other.gameObject;
-                Destroy(enemy);
+                EnemyMovement enemyMovement = enemy.GetComponent<EnemyMovement>();
+                enemyMovement.KillYourself(lootManager);
             }
 
         }

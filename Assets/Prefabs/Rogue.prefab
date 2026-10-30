@@ -30,11 +30,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 092824802baef154b84c741ff63a92e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: -2.5348916
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 092824802baef154b84c741ff63a92e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.484375
+      value: 0.015480816
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 092824802baef154b84c741ff63a92e7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -132,8 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 5
   animator: {fileID: 3160967345052840505}
-  stepInterval: 0
-  footstepSound: {fileID: 8300000, guid: 1baf29f334ff614429de33f5c1b82a12, type: 3}
+  stepInterval: 1
+  footstepSound: {fileID: 8300000, guid: f0dc41c7a6f13cc40a0b8b060d8547ee, type: 3}
 --- !u!114 &6307119973566693056
 MonoBehaviour:
   m_ObjectHideFlags: 0

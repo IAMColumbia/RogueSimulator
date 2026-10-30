@@ -1,8 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -13,18 +10,22 @@ public class ScoreManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void IncreaseScore(int addition)
     {
         score = score + addition;
+        if (scoreText == null)
+        {
+            scoreText = myCanvas.GetComponentInChildren<TextMeshProUGUI>();
+        }
         scoreText.text = "Score: " + score;
     }
 }

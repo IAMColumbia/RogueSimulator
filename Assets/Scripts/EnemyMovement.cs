@@ -19,7 +19,15 @@ public class EnemyMovement : MonoBehaviour
             transform.position += direction * speed * Time.deltaTime;
         }
     }
-    
+    public void KillYourself(LootManager lootmanager)
+    {
+        if (lootmanager == null)
+        {
+            lootmanager = GameObject.Find("LootManager").GetComponent<LootManager>();
+        }
+        lootmanager.SpawnLootOnDeath(gameObject);
+        Destroy(gameObject);
+    }
     public void TurnAggro()
     {
         isAggro = true;

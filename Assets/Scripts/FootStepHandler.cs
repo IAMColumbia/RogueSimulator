@@ -24,7 +24,7 @@ public class FootstepHandler : MonoBehaviour
     /// </summary>
     public void CreateFootstep()
     {
-        Debug.Log("Footstep created at position: " + (footPosition != null ? footPosition.position : transform.position));
+        //Debug.Log("Footstep created at position: " + (footPosition != null ? footPosition.position : transform.position));
         Vector3 position = footPosition != null
             ? footPosition.position
             : transform.position;

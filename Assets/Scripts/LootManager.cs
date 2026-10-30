@@ -1,23 +1,29 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class LootManager : MonoBehaviour
 {
-    [SerializeField] private GameObject lootDrop;
+    [SerializeField] private List<GameObject> lootDrop;
+    //[SerializeField] private GameObject lootDrop;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public GameObject SelectRandomLoot()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (lootDrop.Count == 0)
+        {
+            Debug.LogWarning("Loot drop list is empty!");
+            return null;
+        }
+        int randomIndex = Random.Range(0, lootDrop.Count);
+        return lootDrop[randomIndex];
     }
 
     public void SpawnLootOnDeath(GameObject deadEnemy)
     {
-        Instantiate(lootDrop, deadEnemy.transform.position, deadEnemy.transform.rotation);
+        Instantiate(SelectRandomLoot(), deadEnemy.transform.position, deadEnemy.transform.rotation);
+    }
+
+    public void SpawnLootOnOpenChest(GameObject InteractableChest)
+    {
+        Instantiate(SelectRandomLoot(), InteractableChest.transform.position, InteractableChest.transform.rotation);
     }
 }
