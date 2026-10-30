@@ -12,8 +12,8 @@ public class SpikeHandler : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
-    [Tooltip("How long the spikes remain dangerous.")]
-    [SerializeField] private float activeDuration = 0.5f;
+    //[Tooltip("How long the spikes remain dangerous.")]
+    //[SerializeField] private float activeDuration = 0.5f;
     private LootManager lootManager;
 
 
@@ -61,6 +61,10 @@ public class SpikeHandler : MonoBehaviour
         {
             deactivateTimer.StopTimer();
             deactivateTimer.StartTimer();
+        }
+        else
+        {
+            Debug.LogError("Deactivate TimerTrigger is not assigned.");
         }
     }
 

@@ -1,5 +1,3 @@
-
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
+    [SerializeField] private Animator animator;
+
 
     [SerializeField] private float stepInterval;
     private float stepTimer;
@@ -40,13 +40,21 @@ public class PlayerMovement : MonoBehaviour
         }
 
         moveInput = moveInput.normalized;
+        if (moveInput.x != 0 || moveInput.y != 0)
+        {
+            animator.SetTrigger("isWalking");
+        }
+        else
+        {
+            animator.ResetTrigger("isWalking");
+        }
     }
 
     private void FixedUpdate()
     {
         rb.linearVelocity = moveInput * moveSpeed;
 
-        if(moveInput != Vector2.zero)
+        if (moveInput != Vector2.zero)
         {
             stepTimer -= Time.fixedDeltaTime;
             if (stepTimer <= 0f)
