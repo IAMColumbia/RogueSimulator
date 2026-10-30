@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e2ceadcd0eb7f0845ab6f9e139afba67
+guid: 2ab3b744c42808748a20b1afcd72ec5f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
-    fileImportMode: 0
+    fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -87,7 +87,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   asepriteImporterSettings:
-    fileImportMode: 0
+    fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639287270056214146
+  platformSettingsDirtyTick: 639287862016509292
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -127,7 +127,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Boulder
+  - name: Flame Particle
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 64
-      height: 64
-    spriteID: a9eaaac6fbb1d244e826297ac7a9f435
+      width: 8
+      height: 8
+    spriteID: 4fc48733963ca91428e256a0ce203adb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 2517148307
+      value0: 3047976563
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: Boulder
+    name: Flame Particle
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Boulder
+    - name: Flame Particle
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
-        width: 64
-        height: 64
-      spriteId: a9eaaac6fbb1d244e826297ac7a9f435
+        width: 8
+        height: 8
+      spriteId: 4fc48733963ca91428e256a0ce203adb
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -205,5 +205,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 64}
-  previousTextureSize: {x: 128, y: 128}
+  canvasSize: {x: 8, y: 8}
+  previousTextureSize: {x: 16, y: 16}

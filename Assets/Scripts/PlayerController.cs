@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,11 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
+
+    [SerializeField] private float stepInterval;
+    private float stepTimer;
+
+    [SerializeField] private AudioClip footstepSound;
 
     private void Awake()
     {
@@ -39,5 +45,15 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.linearVelocity = moveInput * moveSpeed;
+
+        if(moveInput != Vector2.zero)
+        {
+            stepTimer -= Time.fixedDeltaTime;
+            if (stepTimer <= 0f)
+            {
+                AudioManager.Instance.PlayCalledClipOnce(footstepSound);
+                stepTimer = stepInterval;
+            }
+        }
     }
 }
