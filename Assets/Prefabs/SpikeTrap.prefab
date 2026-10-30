@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1410122384791678125}
   - component: {fileID: 6685761305389900757}
   - component: {fileID: 4585827448385923466}
+  - component: {fileID: 9034174488339765870}
   m_Layer: 0
   m_Name: SpikeTrap
   m_TagString: Untagged
@@ -31,8 +32,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8821104290208754873}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.05612, y: -1.0091, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.5222917, y: 0.015484571, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -173,7 +174,7 @@ MonoBehaviour:
   enemyEnteredTriggerVolume:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4447129680276636658}
+      - m_Target: {fileID: 9034174488339765870}
         m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
         m_MethodName: StartTimer
         m_Mode: 1
@@ -205,7 +206,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6685761305389900757}
         m_TargetAssemblyTypeName: SpikeHandler, Assembly-CSharp
-        m_MethodName: SpikeTriggered
+        m_MethodName: PlayerTriggeredSpike
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -270,6 +271,34 @@ MonoBehaviour:
       - m_Target: {fileID: 6685761305389900757}
         m_TargetAssemblyTypeName: SpikeHandler, Assembly-CSharp
         m_MethodName: DeactivateSpikes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  timeInSeconds: 0.5
+--- !u!114 &9034174488339765870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8821104290208754873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b54560b550ed04ab60b196b96fd6fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimerTrigger
+  OnTimerFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6685761305389900757}
+        m_TargetAssemblyTypeName: SpikeHandler, Assembly-CSharp
+        m_MethodName: EnemyTriggeredSpike
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

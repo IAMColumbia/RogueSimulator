@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -25,7 +23,7 @@ public class TimerTrigger : MonoBehaviour
     void Update()
     {
         if (isTimerStarted)
-        {        
+        {
             timeAccumulated += Time.deltaTime;
             if (timeAccumulated >= timeInSeconds)
             {
@@ -35,12 +33,13 @@ public class TimerTrigger : MonoBehaviour
             }
         }
     }
-    
+
     public void StartTimer()
     {
-        isTimerStarted = true; 
+        timeAccumulated = 0f;
+        isTimerStarted = true;
     }
-    
+
     /// <summary>
     /// Stops but doesn't reset the timer
     /// </summary>
@@ -48,7 +47,7 @@ public class TimerTrigger : MonoBehaviour
     {
         isTimerStarted = false;
     }
-    
+
     /// <summary>
     /// Resets but doesn't stop the timer
     /// </summary>
@@ -56,7 +55,7 @@ public class TimerTrigger : MonoBehaviour
     {
         timeAccumulated = 0;
     }
-    
+
     /// <summary>
     /// Stops and resets the timer
     /// </summary>
@@ -65,7 +64,7 @@ public class TimerTrigger : MonoBehaviour
         timeAccumulated = 0;
         isTimerStarted = false;
     }
-    
+
     private void OnDisable()
     {
         StopTimer();

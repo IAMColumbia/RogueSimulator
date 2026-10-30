@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hp <= 0 && isDead == false)
+        if (hp <= 0 && isDead == false && gameObject.CompareTag("Player"))
         {
             Debug.Log("Do Game Over Stuff Here");
             isDead = true;
