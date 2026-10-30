@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 91987329}
   - component: {fileID: 91987331}
   - component: {fileID: 91987332}
+  - component: {fileID: 91987333}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -238,6 +239,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c77de887b415042b5b55c2becbd7a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExitHandler
+--- !u!114 &91987333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91987328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a0cdeded0f8a8c48b83dc174b2a9257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerVolume
+  playerEnteredTriggerVolume:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 91987332}
+        m_TargetAssemblyTypeName: ExitHandler, Assembly-CSharp
+        m_MethodName: EndGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  enemyEnteredTriggerVolume:
+    m_PersistentCalls:
+      m_Calls: []
+  canBeTriggeredMultipleTimes: 0
+  isPlayerThere: 0
+  triggered: 0
 --- !u!1 &184770502
 GameObject:
   m_ObjectHideFlags: 0
