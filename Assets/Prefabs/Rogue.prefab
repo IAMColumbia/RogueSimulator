@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   hp: 1
+  animator: {fileID: 3160967345052840505}
 --- !u!61 &5346535812596275222
 BoxCollider2D:
   m_ObjectHideFlags: 0

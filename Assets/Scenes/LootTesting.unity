@@ -1574,14 +1574,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton
       objectReference: {fileID: 0}
-    - target: {fileID: 2800763912695954538, guid: f81d281645a13bc4ba3ba5d08809f436, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2859891989068808842, guid: f81d281645a13bc4ba3ba5d08809f436, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3113031324873397263, guid: f81d281645a13bc4ba3ba5d08809f436, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.6876664
@@ -1621,10 +1613,6 @@ PrefabInstance:
     - target: {fileID: 3113031324873397263, guid: f81d281645a13bc4ba3ba5d08809f436, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6313325377486080179, guid: f81d281645a13bc4ba3ba5d08809f436, type: 3}
-      propertyPath: speed
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2112,11 +2100,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &731239088 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3160967345052840505, guid: e79ca75127202f14193c0481f7f75584, type: 3}
-  m_PrefabInstance: {fileID: 1793801364}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &747833394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4598,10 +4581,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6307119973566693056, guid: e79ca75127202f14193c0481f7f75584, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 731239088}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
