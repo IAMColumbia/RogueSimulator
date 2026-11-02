@@ -7,12 +7,16 @@ public class PlayerHealth : MonoBehaviour
     private bool isDead = false;
 
     [SerializeField] private Animator animator;
-
+    [SerializeField] private ScoreManager scoreManager;
     private PlayerMovement playerController;
 
     private void Awake()
     {
         playerController = GetComponent<PlayerMovement>();
+        if (scoreManager == null)
+        {
+            scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        }
     }
 
     private void Update()
@@ -29,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void PlayerDeath()
     {
+        scoreManager.SaveScore();
         SceneManager.LoadScene("GameOver");
     }
 

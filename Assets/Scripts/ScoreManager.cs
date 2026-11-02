@@ -28,4 +28,10 @@ public class ScoreManager : MonoBehaviour
         }
         scoreText.text = "Score: " + score;
     }
+
+    public void SaveScore()
+    {
+        PlayerPrefs.SetInt("FinalScore", score);
+        PlayerPrefs.Save();
+    }
 }
